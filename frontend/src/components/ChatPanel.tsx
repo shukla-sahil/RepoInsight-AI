@@ -55,7 +55,8 @@ const ChatPanel: React.FC<ChatPanelProps> = ({ repoUrl }) => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:3001/api/ask', {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+      const res = await axios.post(`${API_URL}/api/ask`, {
         repoUrl,
         question: q,
       }, { timeout: 120000 });

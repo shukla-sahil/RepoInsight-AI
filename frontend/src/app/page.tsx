@@ -119,7 +119,8 @@ export default function Home() {
     setSelectedFile(null);
 
     try {
-      const response = await axios.post("http://localhost:3001/api/analyze", { repoUrl }, { timeout: 300000 });
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+      const response = await axios.post(`${API_URL}/api/analyze`, { repoUrl }, { timeout: 300000 });
       setData(response.data);
     } catch (err: unknown) {
       if (axios.isAxiosError(err)) {

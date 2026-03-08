@@ -20,7 +20,8 @@ const FileExplanationPanel: React.FC<Props> = ({ repoUrl, filePath }) => {
       setLoading(true);
       setError('');
       try {
-        const res = await axios.post('http://localhost:3001/api/explain-file', {
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+        const res = await axios.post(`${API_URL}/api/explain-file`, {
           repoUrl,
           filePath,
         }, { timeout: 120000 });
