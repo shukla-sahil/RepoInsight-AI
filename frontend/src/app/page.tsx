@@ -156,9 +156,8 @@ export default function Home() {
       <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh' }}>
         
         {/* ==================== NAVBAR ==================== */}
-        <nav style={{
+        <nav className="nav-container" style={{
           position: 'sticky', top: 0, zIndex: 40,
-          padding: '16px 32px',
           background: 'rgba(10, 14, 26, 0.8)',
           backdropFilter: 'blur(12px)',
           borderBottom: '1px solid rgba(99, 102, 241, 0.08)',
@@ -191,7 +190,7 @@ export default function Home() {
 
         {/* ==================== HERO SECTION (shown when no data) ==================== */}
         {!data && (
-          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <div className="hero-container">
             
             {/* Hero */}
             <section style={{ textAlign: 'center', paddingTop: '80px', paddingBottom: '40px' }}>
@@ -222,8 +221,7 @@ export default function Home() {
               </p>
 
               {/* Search Bar */}
-              <div className="animate-fade-in-up" style={{
-                display: 'flex', maxWidth: '680px', margin: '0 auto 16px', gap: '12px',
+              <div className="hero-search-container animate-fade-in-up" style={{
                 opacity: 0, animationDelay: '0.3s', animationFillMode: 'forwards'
               }}>
                 <input
@@ -303,7 +301,7 @@ export default function Home() {
 
         {/* ==================== ANALYSIS DASHBOARD ==================== */}
         {data && (
-          <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '32px 24px' }}>
+          <div className="dashboard-container">
             
             {/* Dashboard Header */}
             <div className="animate-fade-in" style={{ marginBottom: '32px', display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -323,7 +321,7 @@ export default function Home() {
             </div>
 
             {/* Dashboard Grid - Top Row */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(250px, 1fr) minmax(300px, 1.5fr) minmax(300px, 1.5fr)', gap: '24px' }}>
+            <div className="dashboard-grid-top">
               
               {/* File Explorer */}
               <div className="glass-card-static animate-fade-in-up" style={{ padding: '24px', opacity: 0, animationDelay: '0.1s', animationFillMode: 'forwards', display: 'flex', flexDirection: 'column' }}>
@@ -352,7 +350,7 @@ export default function Home() {
             </div>
 
             {/* Dependency Graph & Architecture - Bottom Row */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginTop: '24px' }}>
+            <div className="dashboard-grid-bottom">
               
               {/* Architecture Explanation */}
               <div className="glass-card-static animate-fade-in-up" style={{ padding: '24px', opacity: 0, animationDelay: '0.4s', animationFillMode: 'forwards', display: 'flex', flexDirection: 'column' }}>
