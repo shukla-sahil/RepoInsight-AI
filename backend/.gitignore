@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+
+# Next.js build
+.next/
+out/
+
+# environment secrets
+.env
+
+# cloned repos created by your tool
+backend/repos/
+
+# OS/editor
+.vscode/
+.DS_Store
+    
